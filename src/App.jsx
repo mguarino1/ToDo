@@ -58,15 +58,7 @@ function App() {
     else { style.backgroundColor = "#FFBDBD" }
   
     const deleteTask = () => {
-      const newTaskList = (t) => {
-        t.map((task,i) => {
-          if(task.id === id) {
-            t = t.splice(i,1)
-          }
-        })
-        return t;
-      };
-      setTaskList((previousTaskList) => newTaskList(previousTaskList));
+      setTaskList((previous) => previous.filter((t) => t.id !== id));
     };
   
     return (
